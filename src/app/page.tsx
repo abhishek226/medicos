@@ -13,7 +13,7 @@ import Link from "next/link";
 // import Header from "@/components/Header/Header";
 import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 
-import { Breadcrumb, Layout, Menu, MenuProps, Table, theme } from 'antd';
+import { Breadcrumb, Card, Layout, Menu, MenuProps, Table, theme } from 'antd';
 import { useEffect, useState } from "react";
 
 const { Header, Content, Footer } = Layout;
@@ -568,6 +568,13 @@ const columns = [
       <div className={styles.hero_area}>
           <div className={styles.site_section}>
             <Container>
+              <Row>
+              <div>
+                    <Card  bordered={false} style={{ width: 300 }}>
+                      <p style={{fontSize:"18px", fontWeight:"bold"}}>PAIN RELIEF : Tramadol</p>  
+                    </Card>
+                  </div>
+              </Row>
               <Row>
                 <Col md={{ span: 6, offset: 3 }}>
                   <>

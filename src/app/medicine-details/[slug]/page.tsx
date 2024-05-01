@@ -11,7 +11,7 @@ import { RightCircleFilled } from "@ant-design/icons";
 import { useState, useEffect } from 'react'
 import medicines from "../../medicines.json"
 import Link from "next/link";
-import { Layout, Menu, MenuProps } from "antd";
+import { Card, Layout, Menu, MenuProps } from "antd";
 import { Header } from "antd/es/layout/layout";
 
 import logo from "../../../../public/logo.png"
@@ -511,6 +511,13 @@ export default function MedicineDetails() {
             <div className={styles.hero_area}>
                 <div className={styles.site_section}>
                     <Container>
+                        <Row>
+                            <div>
+                                <Card  bordered={false} style={{ width: 300 }}>
+                                <p style={{fontSize:"18px", fontWeight:"bold"}}>{medicineType[parentMedicineIndex].type} : {medicineType[parentMedicineIndex].medicines[childMedicineIndex].medicine}</p>  
+                                </Card>
+                            </div>
+                        </Row>
                         <Row>
                             <Col md={{ span: 6, offset: 3 }}>
                                 <>
