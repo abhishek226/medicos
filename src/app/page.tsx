@@ -547,7 +547,7 @@ const columns = [
           <div className={styles.demo_logo}>
             <Image alt=""  src={logo}  />
             <Link style={{textDecoration:"none"}} href="/" as={`/`}>
-                                          <span >Medicos</span>
+                                          <span >Meds24x</span>
                                         </Link>
             {/* <span>Medicos</span> */}
           </div>
