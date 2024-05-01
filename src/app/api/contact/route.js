@@ -16,15 +16,15 @@ export async function POST(req) {
         host:  "smtp.gmail.com",
         port: 587,
         auth: {
-          user: 'dollraj1992007@gmail.com',
-          pass: 'hdiloxvjtblcfhsj',
+          user: 'meds24x7ustous@gmail.com',
+          pass: 'pnfrngxfhevinmky',
         },
       });
       //hdil oxvj tblc fhsj
   
       let mailDetails = {
-        from: 'dollraj1992007@gmail.com',
-        to: [postData.email],
+        from: 'meds24x7ustous@gmail.com',
+        to: ['meds24x7ustous@gmail.com'],
         subject: subject,
         text: body,
       };
