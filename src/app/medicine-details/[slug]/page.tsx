@@ -52,7 +52,7 @@ export default function MedicineDetails() {
     },[params.slug])
     const redirectToPay =(...data:any)=>{
         console.log("Data",data)
-        localStorage.setItem("selected",JSON.stringify({...data[0],medicine:"Tramadol",type:"Pain Relief"}))
+        localStorage.setItem("selected",JSON.stringify({...data[0]}))
         router.push('/place-order');
         // medicine:"Tramadol"
         // type:"Pain Relief",
@@ -527,7 +527,7 @@ export default function MedicineDetails() {
                                                     <span className={styles.sec1}>{type.size}</span>
                                                     <span className={styles.sec2}>${type.price}</span>
                                                     <span className={styles.sec3}>x {type.quantity}</span>
-                                                    <RightCircleFilled onClick={()=>redirectToPay({medicine:'Tramadol',Size:type.size,Price:type.price,Quantity:type.quantity})} style={{fontSize:"30px",color:"#51eaea",marginLeft:"10px",cursor:"pointer"}}  />
+                                                    <RightCircleFilled onClick={()=>redirectToPay({medicine:medicineType[parentMedicineIndex].medicines[childMedicineIndex].medicine,Size:type.size,Price:type.price,Quantity:type.quantity,type:medicineType[parentMedicineIndex].type})} style={{fontSize:"30px",color:"#51eaea",marginLeft:"10px",cursor:"pointer"}}  />
                                                     
                                                 </div>
                                                     {/* <Divider style={{backgroundColor:"red",border:"1px solid"}} /> */}

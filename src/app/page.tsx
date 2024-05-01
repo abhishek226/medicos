@@ -554,7 +554,7 @@ const columns = [
           <Menu theme="dark" style={{marginLeft:"20%",display:"flex",justifyContent:"center"}} onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
         </Header>
       </Layout>
-      <Container style={{width:"70%",margin:"auto"}}>
+      {/* <Container style={{width:"70%",margin:"auto"}}>
         <Table
           columns={columns}
           dataSource={tabelData}
@@ -563,7 +563,7 @@ const columns = [
           title={() => header}
           
           />
-      </Container>
+      </Container> */}
       
       <div className={styles.hero_area}>
           <div className={styles.site_section}>

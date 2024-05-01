@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import Container from 'react-bootstrap/Container';
 import { useRouter } from 'next/navigation'
 import React from 'react';
-import { Button, Form, Input, InputNumber, Divider, Space, InputNumberProps, Layout, Menu, MenuProps, Spin } from 'antd';
+import { Button, Form, Input, InputNumber, Divider, Space, InputNumberProps, Layout, Menu, MenuProps, Spin, Card } from 'antd';
 import { useCreditCardValidator, images } from 'react-creditcard-validator';
 import { Header } from "antd/es/layout/layout";
 
@@ -87,7 +87,9 @@ const PlaceOrder=()=>{
         getExpiryDateProps,
         meta: { erroredInputs,cardType,touchedInputs }
       } = useCreditCardValidator({ expiryDateValidator: expDateValidate });
-
+      console.log('erroredInputs',erroredInputs)
+      console.log('cardType',cardType)
+      console.log('touchedInputs',touchedInputs)
     const onFinish = async (values: any) => {
         console.log(values);
         console.log('expiry', expiry)
@@ -194,16 +196,13 @@ const PlaceOrder=()=>{
               <section className={styles.get_in_touch}>
                   
                   <h1 className={styles.title}>Place Order</h1>
-                  <Container className={styles.itemSelected}>
-                      <div><span>Item</span></div>
-                      <div className={styles.orderMedicine}>
-                          {/* <span>{selectedData?.type}</span> */}
-                          <span>{selectedData?.medicine}</span>
-                          <span>{selectedData?.Size}</span>
-                          <span>${selectedData?.Price}</span>
-                          <span>{selectedData?.Quantity}</span>
-                      </div>
-                  </Container>
+                  <div>
+                    <Card  bordered={false} style={{ width: 300 }}>
+                      <p style={{fontSize:"18px", fontWeight:"bold"}}>{selectedData?.type} : {selectedData?.medicine} ({selectedData?.Size})</p>
+                      <p>Price :${selectedData?.Price} x {selectedData?.Quantity}</p>
+                      
+                    </Card>
+                  </div>
                   <section>
         <Form
           {...layout}

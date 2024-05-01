@@ -8,7 +8,7 @@ export async function POST(req) {
      let  subject = "New Order";
      let bodyData='';
      for(let key in postData){
-      bodyData=bodyData+` ${key} = ${postData[key]}\n`
+      bodyData=bodyData+` ${key} : ${postData[key]}\n`
      }
      let  body = `New Order created.\nData : \n ${bodyData}\n\n Thank you.`;
     let mailTransporter = nodemailer.createTransport({
