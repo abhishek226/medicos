@@ -1386,7 +1386,7 @@ a:focus {
 
 .email{
   padding-left: 5px;
-    font-size: 11px;
+    font-size: 14px;
 }
 .middle{
   border-right: 1px solid black;
@@ -1394,5 +1394,5 @@ a:focus {
     padding-left: 5px;
 }
 .mobile{
-  font-size: 11px;
+  font-size: 14px;
 }
