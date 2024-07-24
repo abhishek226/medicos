@@ -18,12 +18,14 @@ import { useState } from "react";
 
 const { Header, Content, Footer } = Layout;
 
+
 const items = new Array(15).fill(null).map((_, index) => ({
   key: index + 1,
   label: `nav ${index + 1}`,
 }));
 
 export default function Home() {
+  const router = useRouter()
   
   const items: MenuProps['items'] = [
     {
@@ -38,6 +40,12 @@ export default function Home() {
   const [current, setCurrent] = useState('about');
   const onClick: MenuProps['onClick'] = (e) => {
     console.log('click ', e);
+    if(e.keyPath.includes('about')){
+      router.push('/about');
+    }
+    else if(e.keyPath.includes('mail')){
+      router.push('/');
+    }
     setCurrent(e.key);
   };
   return (
@@ -47,6 +55,26 @@ export default function Home() {
         
           </header>
       </div> */}
+      <header id="header-top" className={styles.headerTop}>
+        <ul className={styles.pullRight}>
+          <li className={styles.pullRight}>
+            <div className={styles.headerTopRight}>
+              <ul>
+                <li className={styles.mobile}>
+                  +1 222 777 6565
+                </li>
+                <li>
+                  <div className={styles.middle}></div>
+                </li>
+                <li className={styles.email}>
+                  abcfgksj@gmail.com
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+            
+      </header>
       <Layout>
         <Header style={{ display: 'flex', alignItems: 'center' }}>
           <div className={styles.demo_logo}>
@@ -98,12 +126,6 @@ export default function Home() {
                     </p>
                   </div>
                   <div>
-                    <h2>Free Shipping</h2>
-                    <p>
-                    In our pharmacy we don’t charge any shipping charges because the price quoted for the medication is the total price which includes all the shipping charges and handling charges so all your customers just need to pay that amount only and they don’t need to pay any extra charges for shipping or handing so if you want to order with us you can get a very reasonable price for all your medications in a very good quality available US to US and overseas also
-                    </p>
-                  </div>
-                  <div>
                     <h2>Amazing Customer Service</h2>
                     <p>
                     We always try your best to satisfy all your customers completely because we also know that if customers are happy with us and they are satisfied with your service then they will order with us again in future. We always tell your customers honestly that how much time will be taken to get the package delivered on their doorstep and we give them  their tracking numbers also so that they can track their packages and know each and every update for their package.
@@ -114,6 +136,12 @@ export default function Home() {
                     <p>
                     We don’t take any extra charges from our customers. We always take the reasonable prices for their medications without any shipping and handling charges because the price for the medication includes all the shipping and handling charges in it so all your customers don’t need to pay us any single extra amount other than the price of medication and they also don’t need to pay any charges for duty fees or customs
                      </p>
+                  </div>
+                  <div>
+                    <h2>Contact Us</h2>
+                    <p>
+                      Please contact us at +911234567890
+                    </p>
                   </div>
                 </Col>
               </Row>

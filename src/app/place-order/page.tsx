@@ -87,23 +87,7 @@ const PlaceOrder=()=>{
         getExpiryDateProps,
         meta: { erroredInputs,cardType,touchedInputs }
       } = useCreditCardValidator({ expiryDateValidator: expDateValidate });
-      console.log('erroredInputs',erroredInputs)
-      console.log('cardType',cardType)
-      console.log('touchedInputs',touchedInputs)
     const onFinish = async (values: any) => {
-        console.log(values);
-        console.log('expiry', expiry)
-        console.log('card', card)
-        console.log('mm', mm)
-        console.log('yyyy', yyyy)
-        console.log('card1', card)
-        console.log('card1', card2)
-
-        console.log('card1', card3)
-        console.log('card1', card4)
-        console.log("cardType",cardType)
-        console.log("touchedInputs",touchedInputs)
-        console.log("cardNumber",cardNumber)
         setSpinningStatus(true)
         try {
             const response = await fetch("/api/contact", {
@@ -174,13 +158,36 @@ const PlaceOrder=()=>{
       const [current, setCurrent] = useState('');
       const onClick: MenuProps['onClick'] = (e) => {
         console.log('click ', e);
-        if(e.key= 'app'){
+        if(e.keyPath.includes('app')){
           router.push('/about');
+        }
+        else if(e.keyPath.includes('mail')){
+          router.push('/');
         }
         setCurrent(e.key);
       };
     return (
       <div>
+        <header id="header-top" className={styles.headerTop}>
+        <ul className={styles.pullRight}>
+          <li className={styles.pullRight}>
+            <div className={styles.headerTopRight}>
+              <ul>
+                <li className={styles.mobile}>
+                  +1 222 777 6565
+                </li>
+                <li>
+                  <div className={styles.middle}></div>
+                </li>
+                <li className={styles.email}>
+                  abcfgksj@gmail.com
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+            
+      </header>
         <Layout>
           <Header style={{ display: 'flex', alignItems: 'center' }}>
             <div className={styles.demo_logo}>

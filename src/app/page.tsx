@@ -530,8 +530,11 @@ const columns = [
   const [current, setCurrent] = useState('');
   const onClick: MenuProps['onClick'] = (e) => {
     console.log('click ', e);
-    if(e.key= 'app'){
+    if(e.keyPath.includes('app')){
       router.push('/about');
+    }
+    else if(e.keyPath.includes('mail')){
+      router.push('/');
     }
     setCurrent(e.key);
   };
@@ -542,6 +545,26 @@ const columns = [
         
           </header>
       </div> */}
+      <header id="header-top" className={styles.headerTop}>
+        <ul className={styles.pullRight}>
+          <li className={styles.pullRight}>
+            <div className={styles.headerTopRight}>
+              <ul>
+                <li className={styles.mobile}>
+                  +1 222 777 6565
+                </li>
+                <li>
+                  <div className={styles.middle}></div>
+                </li>
+                <li className={styles.email}>
+                  abcfgksj@gmail.com
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+            
+      </header>
       <Layout>
         <Header style={{ display: 'flex', alignItems: 'center' }}>
           <div className={styles.demo_logo}>
